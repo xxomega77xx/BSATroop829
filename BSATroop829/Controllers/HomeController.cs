@@ -18,6 +18,16 @@ namespace BSATroop829.Controllers
             return View();
         }
 
+        public IActionResult BoyTroop()
+        {
+            return View();
+        }
+
+        public IActionResult GirlTroop()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
