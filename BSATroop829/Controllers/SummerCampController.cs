@@ -2,6 +2,7 @@
 using BSATroop829.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BSATroop829.Controllers
 {
@@ -14,12 +15,20 @@ namespace BSATroop829.Controllers
         {
             _db = db;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            IEnumerable<SummerCampViewModel> objList = _db.SummerCamp;
-            return View(objList);
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
+            var Scouts = from s in _db.SummerCamp
+                           select s;
+            switch (sortOrder)
+            {
+                case "ScoutName":
+                    Scouts = Scouts.OrderByDescending(s => s.ScoutName);
+                    break;
+            }
+            return View(await Scouts.ToListAsync());
         }
+
         //GET
         public IActionResult Create()
         {
