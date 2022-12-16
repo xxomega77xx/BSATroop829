@@ -9,5 +9,6 @@ namespace BSATroop829.Data
             : base(options)
         {
         }
+        public DbSet<Models.SummerCampViewModel> SummerCamp { get; set; }
     }
 }

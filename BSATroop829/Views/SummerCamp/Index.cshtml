@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SummerCampViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index Summer Camp</h1>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Scout Name
+            </th>
+            <th>
+                Merit Badge Selection
+            </th>
+            <th>
+                Priority
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ScoutName
+                </td>
+                <td>
+                    @item.MeritBadge
+                </td>
+                <td>
+                    @item.Priority
+                </td>
+            </tr>
+        }
+    
+</table>
