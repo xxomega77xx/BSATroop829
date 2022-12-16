@@ -1,4 +1,5 @@
 ﻿using BSATroop829.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -17,12 +18,12 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult BoyTroop()
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult GirlTroop()
         {
             return View();

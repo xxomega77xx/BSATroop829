@@ -1,9 +1,11 @@
 ﻿using BSATroop829.Data;
 using BSATroop829.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BSATroop829.Controllers
 {
+    [Authorize]
     public class SummerCampController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -67,6 +69,7 @@ namespace BSATroop829.Controllers
             return View(obj);
         }
         //GET
+        [Authorize(Roles ="Admin")]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
