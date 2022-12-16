@@ -2,18 +2,20 @@
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using Microsoft.Extensions.Configuration;
 
 namespace BSATroop829.Services;
 
 public class EmailSender : IEmailSender
 {
     private readonly ILogger _logger;
-
+    private IConfiguration _configuration;
     public EmailSender(IOptions<AuthMessageSenderOptions> optionsAccessor,
-                       ILogger<EmailSender> logger)
+                       ILogger<EmailSender> logger, IConfiguration configuration)
     {
         Options = optionsAccessor.Value;
         _logger = logger;
+        _configuration = configuration;
     }
 
     public AuthMessageSenderOptions Options { get; } //Set with Secret Manager.
@@ -22,7 +24,7 @@ public class EmailSender : IEmailSender
     {
         if (string.IsNullOrEmpty(Options.SendGridKey))
         {
-            throw new Exception("Null SendGridKey");
+            await Execute(_configuration["SendGridKey"], subject, message, toEmail);
         }
         await Execute(Options.SendGridKey, subject, message, toEmail);
     }
