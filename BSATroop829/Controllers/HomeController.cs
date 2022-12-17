@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace BSATroop829.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,22 +14,46 @@ namespace BSATroop829.Controllers
         {
             _logger = logger;
         }
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
-        [Authorize]
+        
         public IActionResult BoyTroop()
         {
             return View();
         }
-        [Authorize]
-        public IActionResult GirlTroop()
+        public IActionResult BoyTroopCal()
+        {
+            return View();
+        }
+        public IActionResult BoyTroopPhotos()
+        {
+            return View();
+        }
+        public IActionResult BoyTroopOrgChart()
         {
             return View();
         }
 
+        public IActionResult GirlTroop()
+        {
+            return View();
+        }
+        public IActionResult GirlTroopCal()
+        {
+            return View();
+        }
+        public IActionResult GirlTroopPhotos()
+        {
+            return View();
+        }
+        public IActionResult GirlTroopOrgChart()
+        {
+            return View();
+        }
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
