@@ -24,13 +24,19 @@
                     <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ScoutName)</a>
                 </th>
                 <th>
-                    Merit Badge Selection
+                    Age
                 </th>
                 <th>
-                    Priority
+                    Rank
+                </th>
+                <th>
+                    Merit Badge
                 </th>
                 <th>
                     Time Slot
+                </th>
+                <th>
+                    Priority
                 </th>
                 <th>
                 </th>
@@ -44,13 +50,19 @@
                         @item.ScoutName
                     </td>
                     <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        @item.Rank
+                    </td>
+                    <td>
                         @item.MeritBadge
+                    </td>                    
+                    <td>
+                        @item.TimeSlot
                     </td>
                     <td>
                         @item.Priority
-                    </td>
-                    <td>
-                        @item.TimeSlot
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">
