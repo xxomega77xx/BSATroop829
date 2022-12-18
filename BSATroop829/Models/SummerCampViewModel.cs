@@ -9,7 +9,7 @@ namespace BSATroop829.Models
         [Required]
         public string? ScoutName { get; set; }
         public string? MeritBadge { get; set; }
-        public string? TimeofDay { get; set; }
+        public string? TimeSlot { get; set; }
         public bool EagleRequired  { get; set; }
         public string? Prerequisites { get; set; }
         public string? Priority { get; set; }
