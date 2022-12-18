@@ -7,21 +7,6 @@
             <h2 class="text-primary">Delete Scout Info</h2>
             <hr />
         </div>
-        <div class="mb-3">
-            <label asp-for="ScoutName" class="form-label">Scout Name</label>
-            <input asp-for="ScoutName" type="text" contenteditable="false" disabled class="form-control disabled"/>
-            <span asp-validation-for="ScoutName" class="text-danger"></span>
-         </div>
-         <div class="mb-3">
-            <label asp-for="MeritBadge" class="form-label">Merit Badge</label>
-            <input asp-for="MeritBadge" type="text" contenteditable="false" disabled class="form-control disabled" />
-            <span asp-validation-for="MeritBadge" class="text-danger"></span>
-         </div>
-         <div class="mb-3">
-            <label asp-for="Priority" class="form-label">Prority</label>
-            <input asp-for="Priority" type="text" contenteditable="false" disabled class="form-control disabled" />
-            <span asp-validation-for="Priority" class="text-danger"></span>
-         </div>
          <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
          <a asp-controller="SummerCamp" asp-action="Index" class="btn btn-secondary" style="width:150px">
              Back to list

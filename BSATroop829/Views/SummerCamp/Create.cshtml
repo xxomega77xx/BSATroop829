@@ -8,19 +8,34 @@
         </div>
         <div class="mb-3">
             <label asp-for="ScoutName" class="form-label">Scout Name</label>
-            <input asp-for="ScoutName" type="text" class="form-control"/>
+            <input asp-for="ScoutName" type="text" class="form-control" />
             <span asp-validation-for="ScoutName" class="text-danger"></span>
-         </div>
-         <div class="mb-3">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Age</label>
+            <input asp-for="Age" type="text" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Rank" class="form-label">Rank</label>
+            <input asp-for="Rank" type="text" class="form-control" />
+            <span asp-validation-for="Rank" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
             <label asp-for="MeritBadge" class="form-label">Merit Badge</label>
-            <input asp-for="MeritBadge" type="text" class="form-control"/>
+            <input asp-for="MeritBadge" type="text" class="form-control" />
             <span asp-validation-for="MeritBadge" class="text-danger"></span>
-         </div>
-         <div class="mb-3">
-            <label asp-for="Priority" class="form-label">Prority</label>
-            <input asp-for="Priority" type="text" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TimeSlot" class="form-label">Time Slot</label>
+            <input asp-for="TimeSlot" type="text" class="form-control" />
+            <span asp-validation-for="TimeSlot" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Priority" class="form-label">Priority</label>
+            <input asp-for="Priority" type="text" class="form-control" />
             <span asp-validation-for="Priority" class="text-danger"></span>
-         </div>
+        </div>
          <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
          <a asp-controller="SummerCamp" asp-action="Index" class="btn btn-secondary" style="width:150px">
              Back to list
