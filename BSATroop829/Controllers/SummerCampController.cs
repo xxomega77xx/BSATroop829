@@ -19,7 +19,7 @@ namespace BSATroop829.Controllers
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
             var Scouts = from s in _db.SummerCamp
-                           select s;
+                         select s;
             switch (sortOrder)
             {
                 case "ScoutName":
@@ -78,7 +78,7 @@ namespace BSATroop829.Controllers
             return View(obj);
         }
         //GET
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)

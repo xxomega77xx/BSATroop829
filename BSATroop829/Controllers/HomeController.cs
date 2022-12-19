@@ -19,7 +19,7 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
-        
+
         public IActionResult BoyTroop()
         {
             return View();

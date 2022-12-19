@@ -18,8 +18,8 @@ namespace BSATroop829.Models
         public string? TimeSlot { get; set; }
         [Required]
         public string? Priority { get; set; }
-        public bool EagleRequired  { get; set; }
+        public bool EagleRequired { get; set; }
         public string? Prerequisites { get; set; }
-        
+
     }
 }

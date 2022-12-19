@@ -1,6 +1,5 @@
 ﻿using BSATroop829.Constants;
 using Microsoft.AspNetCore.Identity;
-using System.Data;
 
 namespace BSATroop829.Seeds
 {
