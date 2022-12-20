@@ -19,12 +19,14 @@
             <th>
                 Id
             </th>
+
             <th style="width:10%">
                 Actions
             </th>
         </tr>
     </thead>
     <tbody>
+
         @foreach (var role in Model)
         {
             <tr>
@@ -34,24 +36,17 @@
                 <td>
                     @role.Id
                 </td>
-                <td class="text-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu shadow animated--grow-in">
-                            <a class="dropdown-item">
-                                <i class="fas fa-pencil-alt"></i> Edit
-                            </a>
-                            <form class="d-inline">
-                                <a class="dropdown-item"><i class="fas fa-trash-alt"></i> Delete</a>
-                            </form>
-                            <a style='margin-right:16px' asp-controller="Permission" asp-action="Index" asp-route-roleId="@role.Id" class="dropdown-item">
-                                <i class="fas fa-wrench"></i> Manage Permissions
-                            </a>
+                <td>
+                    <a asp-controller="roles" asp-action="editrole" asp-route-id="@role.Id" class="btn btn-primary">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <a asp-controller="roles" asp-action="deleterole" asp-route-id="@role.Id" class="btn btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                    <a asp-controller="Permission" asp-action="Index" asp-route-roleId="@role.Id" class="btn btn-info">
+                        <i class="bi bi-wrench-adjustable-circle"></i>
+                    </a>
 
-                        </div>
-                    </div>
                 </td>
             </tr>
         }

@@ -52,7 +52,6 @@ namespace BSATroop829.Controllers
             result = await _userManager.AddToRolesAsync(user, model.UserRoles.Where(x => x.Selected).Select(y => y.RoleName));
             var currentUser = await _userManager.GetUserAsync(User);
             await _signInManager.RefreshSignInAsync(currentUser);
-            await Seeds.DefaultUsers.SeedSuperAdminAsync(_userManager, _roleManager);
             return RedirectToAction("Index", new { userId = id });
         }
     }
