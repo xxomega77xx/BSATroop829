@@ -1,6 +1,9 @@
-﻿using BSATroop829.Models;
+﻿using BSATroop829.Data;
+using BSATroop829.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BSATroop829.Controllers
@@ -9,17 +12,18 @@ namespace BSATroop829.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _db;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
         [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
-
+        #region BoyTroop
         public IActionResult BoyTroop()
         {
             return View();
@@ -36,7 +40,9 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
+        #endregion BoyTroop
 
+        #region GirlTroop
         public IActionResult GirlTroop()
         {
             return View();
@@ -53,8 +59,34 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
-        [AllowAnonymous]
-        public IActionResult Privacy()
+
+        #endregion GirlTroop
+        
+        public async Task<IActionResult> EaglesAsync(string sortOrder)
+        {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
+            var Scouts = from s in _db.TroopEagles
+                         select s;
+            switch (sortOrder)
+            {
+                case "ScoutName":
+                    Scouts = Scouts.OrderByDescending(s => s.ScoutName);
+                    break;
+            }
+            return View(await Scouts.ToListAsync());
+        }
+        
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+        
+        public IActionResult Details()
         {
             return View();
         }

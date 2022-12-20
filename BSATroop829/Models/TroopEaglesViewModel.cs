@@ -9,6 +9,8 @@ namespace BSATroop829.Models
         [Required]
         public string? ScoutName { get; set; }
         [Required]
+        public string? Troop { get; set; }
+        [Required]
         public string? BoardofReviewDate { get; set; }
     }
 }

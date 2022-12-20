@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TroopEaglesViewModel>
+<h1>Troop Eagles Past and Present</h1>
+
+
+
+@if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+{
+    <a asp-action="Create" class="btn btn-primary float-right">
+        <i class="bi bi-person-fill-add"></i>
+        &nbsp; Add Eagle
+    </a>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Scout Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Troop)
+            </th>
+            <th>
+                Board of Review Date
+            </th>
+            @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+            {
+                <th></th>
+            }
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScoutName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Troop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoardofReviewDate)
+                </td>
+                @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
