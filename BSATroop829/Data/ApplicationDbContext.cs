@@ -11,5 +11,6 @@ namespace BSATroop829.Data
         }
         public DbSet<Models.SummerCampViewModel> SummerCamp { get; set; }
         public DbSet<Models.TroopEaglesViewModel> TroopEagles { get; set; }
+        public DbSet<Models.PhotoGalleryVeiwModel> PhotoGallery { get; set; }
     }
 }
