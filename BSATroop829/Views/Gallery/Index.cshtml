@@ -7,21 +7,20 @@
     <div class="card card-primary">
         <div class="card-header">
             <div class="card-title">
-                Gallery Photo's
+               Troop 829B and 829G Photo Gallery
             </div>
         </div>
         <div class="card-body">
 
-            <form id="frmPhototGraphy" class="form-check-inline" asp-action="AddPhotos" asp-controller="gallery" method="post" enctype="multipart/form-data">
+            <form id="frmPhototGraphy" class="form-control" asp-action="AddPhotos" asp-controller="gallery" method="post" enctype="multipart/form-data">
                 <div class="col-md-6 col-sm-6">
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Photo</label>
-                        
+
                         <div class="col-sm-6 custom-file">
 
-                            <input asp-for="@Model.Photos.PhotoFile" type="file" class="custom-file-input" multiple="multiple">
-                            <label class="custom-file-label" for="@Model.Photos.PhotoFile">Choose file</label>
+                            <input asp-for="@Model.Photos.PhotoFile" type="file" class="form-control" multiple="multiple">
                             <span asp-validation-for="@Model.Photos.PhotoFile" class="text-danger"></span>
 
                         </div>
@@ -38,11 +37,16 @@
                 {
                     foreach (var item in Model.PhotosList)
                     {
-                        <div class="col-sm-2">
-                            <a href="@Url.Content("~/Resources/"+item.Name)" data-toggle="modal" data-title="@item.Title" data-gallery="gallery">
-                                <img src="~/Resources/" asp-append-version="true" class="img-fluid mb-2" alt="white sample">
-                            </a>
-                            <a href="@Url.Action("DeletePhoto","gallery",new { id=item.Id})" style="float:right">Delete</a>
+                        <div class="card card-img" style="height:25%">
+                            <div class="card-img">
+                                <img style="width:75%;height:50%" src="~/resources/@item.Name" />
+                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster"))
+                                {
+                                    <a href="@Url.Action("DeletePhoto","gallery",new { id=item.Id})" style="float:right">Delete</a>
+                                }
+
+                            </div>
+
                         </div>
                     }
 
@@ -52,20 +56,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts{
-
-    <script>
-
-        $(function () {
-            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-                event.preventDefault();
-                $(this).ekkoLightbox({
-                    alwaysShowClose: true
-                });
-            });
-        });
-
-
-    </script>
-}  

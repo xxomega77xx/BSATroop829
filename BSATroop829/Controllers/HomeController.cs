@@ -32,10 +32,6 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
-        public IActionResult BoyTroopPhotos()
-        {
-            return View();
-        }
         public IActionResult BoyTroopOrgChart()
         {
             return View();
@@ -48,10 +44,6 @@ namespace BSATroop829.Controllers
             return View();
         }
         public IActionResult GirlTroopCal()
-        {
-            return View();
-        }
-        public IActionResult GirlTroopPhotos()
         {
             return View();
         }
