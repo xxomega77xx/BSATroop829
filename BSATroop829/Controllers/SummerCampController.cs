@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize]
     public class SummerCampController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -15,6 +14,7 @@ namespace BSATroop829.Controllers
         {
             _db = db;
         }
+        
         public async Task<IActionResult> Index(string sortOrder)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
@@ -50,6 +50,7 @@ namespace BSATroop829.Controllers
         }
 
         //GET
+        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee,Admin,SuperAdmin")]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -78,7 +79,7 @@ namespace BSATroop829.Controllers
             return View(obj);
         }
         //GET
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Activities Coordinator, ScoutMaster, AsstScoutMaster,Commitee,Admin,SuperAdmin")]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)

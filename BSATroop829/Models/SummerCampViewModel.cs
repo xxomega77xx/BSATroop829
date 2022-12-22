@@ -12,12 +12,34 @@ namespace BSATroop829.Models
         public int Age { get; set; }
         [Required]
         public string? Rank { get; set; }
-        [Required]
+        
         public string? MeritBadge { get; set; }
-        [Required]
+        
         public string? TimeSlot { get; set; }
         [Required]
-        public string? Priority { get; set; }
+        public string? Priority1 { get; set; }
+        [Required]
+        public string? Priority2 { get; set; }
+        [Required]
+        public string? Priority3 { get; set; }
+        [Required]
+        public string? Priority4 { get; set; }
+        [Required]
+        public string? Priority5 { get; set; }
+        [Required]
+        public string? Priority6 { get; set; }
+        [Required]
+        public string? Priority7 { get; set; }
+        [Required]
+        public string? Priority8 { get; set; }
+        [Required]
+        public string? Priority9 { get; set; }
+        [Required]
+        public string? Priority10 { get; set; }
+        [Required]
+        public string? Priority11{ get; set; }
+        [Required]
+        public string? Priority12{ get; set; }
         public bool EagleRequired { get; set; }
         public string? Prerequisites { get; set; }
 
