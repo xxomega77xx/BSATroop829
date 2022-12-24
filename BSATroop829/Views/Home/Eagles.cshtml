@@ -5,7 +5,7 @@
 
 @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
 {
-    <a asp-action="Create" class="btn btn-primary float-right">
+    <a asp-action="Create" class="btn btn-secondary float-right">
         <i class="bi bi-person-fill-add"></i>
         &nbsp; Add Eagle
     </a>
