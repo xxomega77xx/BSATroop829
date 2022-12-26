@@ -66,8 +66,8 @@
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle drop" style="background-color:green" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
-                                <div class="dropdown-menu dropdown-menu-dark">
+                                    <a class="nav-link dropdown-toggle drop" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
                                     <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
                                     </div>
