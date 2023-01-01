@@ -52,12 +52,13 @@ namespace BSATroop829.Controllers
 
             return RedirectToAction("Index");
         }
-
+        
         public IActionResult DeletePhoto(int id)
         {
             var photo = db.PhotoGallery.Find(id);
             if(photo != null)
            {
+                
                 System.IO.File.Delete(photo.Path);
                 db.PhotoGallery.Remove(photo);
                 db.SaveChanges();

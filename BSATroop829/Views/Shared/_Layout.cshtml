@@ -63,6 +63,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="MeritBadgeCounselors" asp-action="Index">Local Merit Badge Counselors</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="FileManager" asp-action="Index">Documents</a>
+                            </li>
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item dropdown">

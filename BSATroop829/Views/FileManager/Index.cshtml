@@ -1,0 +1,76 @@
+﻿@model FilesViewModel
+@using BSATroop829.Helpers;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <div class="card-title">
+                Document Library
+            </div>
+        </div>
+        <div class="card-body">
+
+            <form id="frmPhototGraphy" class="form-control" asp-action="AddFiles" asp-controller="FileManager" method="post" enctype="multipart/form-data">
+                <div class="col-md-6 col-sm-6">
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Photo</label>
+
+                        <div class="col-sm-6 custom-file">
+
+                            <input asp-for="@Model.Files.File" type="file" class="form-control" multiple="multiple">
+                            <span asp-validation-for="@Model.Files.File" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Upload All</button></div>
+                    </div>
+
+
+
+                </div>
+            </form>
+            <br />
+            <div class="row">
+                @if (Model.FileList != null)
+                {
+                    foreach (var item in Model.FileList)
+                    {
+                        <div class="card card-img" style="height:25%">
+                            <div class="card-img">
+                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster"))
+                                {
+                                    @item.Name
+                                    <form id="frmfile" class="form-control" asp-action="DownloadFile" asp-controller="FileManager" method="get" enctype="application/x-www-form-urlencoded">
+                                        <div class="form-control row">
+                                            <label class="col-sm-2 col-form-label">Photo</label>
+
+                                            <div class="col-sm-6">
+
+                                                <input asp-for="@item.File" type="file" class="form-select">
+                                                <span asp-validation-for="@item.File" class="text-danger"></span>
+
+                                            </div>
+                                            <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Download</button></div>
+                                        </div>
+                                    </form>
+                                    
+                                @Html.ActionLink("Download", "DownloadFile", new { fileName = item.Name })
+                                <a href="@Url.Action("DeleteFile","FileManager",new { id=item.Id})" style="float:right">Delete</a>
+                                }
+
+                        </div>
+
+                    </div>
+                    }
+
+                }
+
+        </div>
+    </div>
+</div>
+</div>

@@ -3,6 +3,6 @@
     public class FilesViewModel
     {
         public FileManagerViewModel? Files { get; set; }
-        public List<PhotoGalleryVeiwModel>? FileList { get; set; }
+        public List<FileManagerViewModel>? FileList { get; set; }
     }
 }
