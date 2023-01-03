@@ -10,30 +10,33 @@
     <div class="card card-primary">
         <div class="card-header">
             <div class="card-title">
-                Document Library
+                <h1 class="text-center">Document Library</h1>
             </div>
         </div>
         <div class="card-body">
+            @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Commitee Member"))
+            {
+                <form id="frmDocumentLibrary" class="form-control" asp-action="AddFiles" asp-controller="FileManager" method="post" enctype="multipart/form-data">
+                    <div class="col-md-6 col-sm-6">
 
-            <form id="frmPhototGraphy" class="form-control" asp-action="AddFiles" asp-controller="FileManager" method="post" enctype="multipart/form-data">
-                <div class="col-md-6 col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Photo</label>
 
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Photo</label>
+                            <div class="col-sm-6 custom-file">
 
-                        <div class="col-sm-6 custom-file">
+                                <input asp-for="@Model.Files.File" type="file" class="form-control" multiple="multiple">
+                                <span asp-validation-for="@Model.Files.File" class="text-danger"></span>
 
-                            <input asp-for="@Model.Files.File" type="file" class="form-control" multiple="multiple">
-                            <span asp-validation-for="@Model.Files.File" class="text-danger"></span>
-
+                            </div>
+                            <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Upload All</button></div>
                         </div>
-                        <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Upload All</button></div>
+
+
+
                     </div>
+                </form>
+            }
 
-
-
-                </div>
-            </form>
             <br />
             <div class="row">
                 @if (Model.FileList != null)
@@ -42,35 +45,18 @@
                     {
                         <div class="card card-img" style="height:25%">
                             <div class="card-img">
-                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster"))
+                                <h2>@item.Name.Split('_')[1].ToUpper()</h2>
+                                @Html.ActionLink("Download", "DownloadFile", new { id = item.Id }, new {@class = "btn btn-danger", @style = "float:right"})
+                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Commitee Member"))
                                 {
-                                    @item.Name
-                                    <form id="frmfile" class="form-control" asp-action="DownloadFile" asp-controller="FileManager" method="get" enctype="application/x-www-form-urlencoded">
-                                        <div class="form-control row">
-                                            <label class="col-sm-2 col-form-label">Photo</label>
-
-                                            <div class="col-sm-6">
-
-                                                <input asp-for="@item.File" type="file" class="form-select">
-                                                <span asp-validation-for="@item.File" class="text-danger"></span>
-
-                                            </div>
-                                            <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Download</button></div>
-                                        </div>
-                                    </form>
-                                    
-                                @Html.ActionLink("Download", "DownloadFile", new { fileName = item.Name })
-                                <a href="@Url.Action("DeleteFile","FileManager",new { id=item.Id})" style="float:right">Delete</a>
+                                    <a href="@Url.Action("DeleteFile","FileManager",new { id=item.Id})" class="btn btn-secondary" style="float:right">Delete</a>
                                 }
-
+                            </div>
                         </div>
-
-                    </div>
                     }
 
                 }
-
+            </div>
         </div>
     </div>
-</div>
 </div>

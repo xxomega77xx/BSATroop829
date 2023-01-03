@@ -42,8 +42,8 @@ namespace BSATroop829.Controllers
                 {
                     FileManagerViewModel currentFile = new FileManagerViewModel();
                     var guid = Guid.NewGuid().ToString();
-                    var filePath = "wwwroot/Resources/Files" + guid + item.FileName;
-                    var fileName = guid + item.FileName;
+                    var fileName = guid + "_" + item.FileName;
+                    var filePath = "wwwroot/Resources/Files/" + fileName;
                     using (var stream = System.IO.File.Create(filePath))
                     {
                         item.CopyTo(stream);
@@ -79,7 +79,7 @@ namespace BSATroop829.Controllers
             if (file != null)
             {
                 byte[] bytes = System.IO.File.ReadAllBytes(file.Path);
-                return File(bytes, "application/octet-stream", file.Path);
+                return File(bytes, "application/octet-stream", file.Name.Split('_')[1]);
             }
             return RedirectToAction("index");
         }
