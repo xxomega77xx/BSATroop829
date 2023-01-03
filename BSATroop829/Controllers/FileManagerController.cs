@@ -10,7 +10,7 @@ using System.IO;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class FileManagerController : Controller
     {
         private readonly ApplicationDbContext _context;

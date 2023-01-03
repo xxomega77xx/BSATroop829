@@ -80,6 +80,13 @@
     --bs-highlight-bg: #fff3cd
 }
 
+
+/*Custom added CSS*/
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
 *, ::after, ::before {
     box-sizing: border-box
 }
