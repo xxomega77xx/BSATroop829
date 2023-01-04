@@ -122,7 +122,9 @@ hr {
     margin-top: 0;
     margin-bottom: 1rem;
     font-weight: 700;
-    line-height: 1.2
+    line-height: 1.2;
+    color:black
+    
 }
 
 .h1, h1 {
@@ -3099,8 +3101,8 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #e83283;
-    --bs-btn-border-color: #e83283;
+    --bs-btn-bg: green;
+    --bs-btn-border-color: tan;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c52b6f;
     --bs-btn-hover-border-color: #ba2869;
@@ -3167,7 +3169,7 @@ textarea.form-control-lg {
 
 .btn-warning {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #ffc107;
+    --bs-btn-bg: Orange;
     --bs-btn-border-color: #ffc107;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #d9a406;
@@ -3184,7 +3186,7 @@ textarea.form-control-lg {
 
 .btn-danger {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #fd7e14;
+    --bs-btn-bg: Red;
     --bs-btn-border-color: #fd7e14;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #d76b11;
