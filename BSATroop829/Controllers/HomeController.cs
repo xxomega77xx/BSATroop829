@@ -2,13 +2,12 @@
 using BSATroop829.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -79,6 +78,11 @@ namespace BSATroop829.Controllers
         }
         
         public IActionResult Details()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Credits()
         {
             return View();
         }
