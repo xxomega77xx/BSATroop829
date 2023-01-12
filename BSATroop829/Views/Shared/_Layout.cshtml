@@ -54,11 +54,23 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="SummerCamp" asp-action="Index">Summer Camp 2023</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activity Registration</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="SummerCamp" asp-action="Index">Summer Camp 2023</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="MeritBadgeCollegeRegistrationForm">Merit Badge College 2023</a>
+                                    @*<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>*@
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FinacialAid">Summer Camp Finacial Aid Request</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requests</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FinancialAidForm">Financial Aid Request</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ReimbursementForm">Reimbursement Request</a>
+                                    @*<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>*@
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Eagles">Eagles</a>

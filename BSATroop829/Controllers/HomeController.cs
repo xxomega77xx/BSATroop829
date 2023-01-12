@@ -92,10 +92,22 @@ namespace BSATroop829.Controllers
             return View();
         }
 
-        public IActionResult FinacialAid()
+        public IActionResult FinancialAidForm()
         {
             return View();
         }
+        
+        public IActionResult ReimbursementForm()
+        {
+            return View();
+        }
+
+        public IActionResult MeritBadgeCollegeRegistrationForm()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
