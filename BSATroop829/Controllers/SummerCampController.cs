@@ -2,7 +2,9 @@
 using BSATroop829.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace BSATroop829.Controllers
 {
@@ -14,7 +16,7 @@ namespace BSATroop829.Controllers
         {
             _db = db;
         }
-        
+
         public async Task<IActionResult> Index(string sortOrder)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
@@ -26,12 +28,16 @@ namespace BSATroop829.Controllers
                     Scouts = Scouts.OrderByDescending(s => s.ScoutName);
                     break;
             }
+
+
             return View(await Scouts.ToListAsync());
         }
 
         //GET
         public IActionResult Create()
         {
+            ViewBag.DropdownItems = GetMeritBadgeInfo();
+            ViewBag.SelectList = GetMeritBadgeSelectList();
             return View();
         }
         //POST
@@ -108,5 +114,26 @@ namespace BSATroop829.Controllers
             TempData["success"] = "Scout information removed successfully.";
             return RedirectToAction("Index");
         }
+
+        public List<MeritBadgesViewModel> GetMeritBadgeInfo()
+        {
+            return _db.MeritBadges.ToList();
+        }
+
+        public List<SelectListItem> GetMeritBadgeSelectList()
+        {
+            var meritBadges = _db.MeritBadges.ToList();
+            var meritBadgeSelectList = new List<SelectListItem>();
+            foreach (var meritBadge in meritBadges)
+            {
+                meritBadgeSelectList.Add(new SelectListItem
+                {
+                    Text = meritBadge.Name,
+                    Value = meritBadge.Name
+                });
+            }
+            return meritBadgeSelectList;
+        }
+
     }
 }

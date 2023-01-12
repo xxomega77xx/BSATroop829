@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BSATroop829.Models
 {
@@ -42,6 +43,5 @@ namespace BSATroop829.Models
         public string? Priority12{ get; set; }
         public bool EagleRequired { get; set; }
         public string? Prerequisites { get; set; }
-
     }
 }

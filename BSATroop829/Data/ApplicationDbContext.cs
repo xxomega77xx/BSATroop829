@@ -14,5 +14,6 @@ namespace BSATroop829.Data
         public DbSet<Models.PhotoGalleryVeiwModel> PhotoGallery { get; set; }
         public DbSet<Models.MeritBadgeCounselorsViewModel> MeritBadgeCounselors { get; set; }
         public DbSet<Models.FileManagerViewModel> FileManager { get; set; }
+        public DbSet<Models.MeritBadgesViewModel> MeritBadges { get; set; }
     }
 }
