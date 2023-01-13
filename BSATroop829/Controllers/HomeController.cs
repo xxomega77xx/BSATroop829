@@ -53,20 +53,6 @@ namespace BSATroop829.Controllers
 
         #endregion GirlTroop
         
-        public async Task<IActionResult> EaglesAsync(string sortOrder)
-        {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
-            var Scouts = from s in _db.TroopEagles
-                         select s;
-            switch (sortOrder)
-            {
-                case "ScoutName":
-                    Scouts = Scouts.OrderByDescending(s => s.ScoutName);
-                    break;
-            }
-            return View(await Scouts.ToListAsync());
-        }
-        
         public IActionResult Edit()
         {
             return View();
@@ -86,7 +72,7 @@ namespace BSATroop829.Controllers
         {
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult FAQ()
         {
             return View();

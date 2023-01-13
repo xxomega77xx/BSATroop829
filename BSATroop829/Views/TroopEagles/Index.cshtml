@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BSATroop829.Models.TroopEaglesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Troop 829 Current and Former Eagles</h1>
+
+<p>
+    @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+    {
+        <a asp-action="Create" class="btn btn-primary float-right">
+            <i class="bi bi-person-fill-add"></i>
+            &nbsp; Add Eagle
+        </a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoutName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Troop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoardofReviewDate)
+            </th>
+            @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScoutName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Troop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoardofReviewDate)
+                </td>
+                @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">
+                            <i class="bi bi-pencil"></i>Edit
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">
+                            <i class="bi bi-receipt"></i>Details
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>Delete
+                        </a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
