@@ -93,6 +93,10 @@ namespace BSATroop829.Controllers
             return View();
         }
 
+        public IActionResult EventDueDates()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

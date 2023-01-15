@@ -37,6 +37,7 @@
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopCal">Calendar</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
                                 </div>
@@ -47,13 +48,11 @@
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopCal">Calendar</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
-                            </li>
+                            </li>                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activity Registration</a>
                                 <div class="dropdown-menu" style="background-color:green">
@@ -83,6 +82,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
