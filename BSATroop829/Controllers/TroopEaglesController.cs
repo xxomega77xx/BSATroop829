@@ -44,7 +44,7 @@ namespace BSATroop829.Controllers
         }
 
         // GET: TroopEagles/Create
-        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee Member,Admin,SuperAdmin")]
+        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Committee Member,Admin,SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -67,7 +67,7 @@ namespace BSATroop829.Controllers
         }
 
         // GET: TroopEagles/Edit/5
-        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee Member,Admin,SuperAdmin")]
+        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Committee Member,Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TroopEagles == null)
@@ -119,7 +119,7 @@ namespace BSATroop829.Controllers
         }
 
         // GET: TroopEagles/Delete/5
-        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee Member,Admin,SuperAdmin")]
+        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Committee Member,Admin,SuperAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TroopEagles == null)

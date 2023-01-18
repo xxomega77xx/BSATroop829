@@ -8,7 +8,7 @@
 <h1>Troop 829 Current and Former Eagles</h1>
 
 <p>
-    @if (User.IsInRole("Admin") || User.IsInRole("Commitee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+    @if (User.IsInRole("Admin") || User.IsInRole("Committee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
     {
         <a asp-action="Create" class="btn btn-primary float-right">
             <i class="bi bi-person-fill-add"></i>
@@ -28,7 +28,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.BoardofReviewDate)
             </th>
-            @if (User.IsInRole("Admin") || User.IsInRole("Commitee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+            @if (User.IsInRole("Admin") || User.IsInRole("Committee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
             {
                 <th></th>
             }
@@ -47,7 +47,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BoardofReviewDate)
                 </td>
-                @if (User.IsInRole("Admin") || User.IsInRole("Commitee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+                @if (User.IsInRole("Admin") || User.IsInRole("Committee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
                 {
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">
