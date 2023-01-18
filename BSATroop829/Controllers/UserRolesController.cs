@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Scoutmaster,Committee Member")]
     public class UserRolesController : Controller
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -40,7 +40,8 @@ namespace BSATroop829.Controllers
             var model = new ManageUserRolesViewModel()
             {
                 UserId = userId,
-                UserRoles = viewModel
+                UserRoles = viewModel,
+                UserName = user.UserName
             };
             return View(model);
         }

@@ -56,7 +56,7 @@ namespace BSATroop829.Controllers
         }
 
         //GET
-        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee,Admin,SuperAdmin")]
+        [Authorize(Roles = "Activities Coordinator,ScoutMaster,AsstScoutMaster,Commitee Member,Admin,SuperAdmin")]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -85,7 +85,7 @@ namespace BSATroop829.Controllers
             return View(obj);
         }
         //GET
-        [Authorize(Roles = "Activities Coordinator, ScoutMaster, AsstScoutMaster,Commitee,Admin,SuperAdmin")]
+        [Authorize(Roles = "Activities Coordinator, ScoutMaster, AsstScoutMaster,Commitee Member,Admin,SuperAdmin")]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)

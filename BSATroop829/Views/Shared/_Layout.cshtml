@@ -86,7 +86,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
                             </li>
-                            @if (User.IsInRole("Admin"))
+                            @if (User.IsInRole("Admin") || User.IsInRole("ScoutMaster") || User.IsInRole("Commitee Member"))
                             {
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle drop" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>

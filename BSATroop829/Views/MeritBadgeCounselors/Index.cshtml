@@ -24,7 +24,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CounselorPhoneNumber)
             </th>
-            @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+            @if (User.IsInRole("Admin") || User.IsInRole("Commitee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
             {
                 <th></th>
             }
@@ -44,7 +44,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CounselorPhoneNumber)
                 </td>
-                @if (User.IsInRole("Admin") || User.IsInRole("Commitee") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+                @if (User.IsInRole("Admin") || User.IsInRole("Commitee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
                 {
 
                     <td>

@@ -37,13 +37,19 @@ public class EmailSender : IEmailSender
             Subject = subject,
             PlainTextContent = message,
             HtmlContent = message
+            
         };
         msg.AddTo(new EmailAddress(toEmail));
+
+        var EmailVerificationid = "d-eb1729fe67104227bc13aa7e60b33084";
 
         // Disable click tracking.
         // See https://sendgrid.com/docs/User_Guide/Settings/tracking.html
         msg.SetClickTracking(false, false);
-        var response = await client.SendEmailAsync(msg);
+        var response = await client.RequestAsync(
+            method: SendGridClient.Method.GET,
+            urlPath: $"designs/{EmailVerificationid}"
+        );
         _logger.LogInformation(response.IsSuccessStatusCode
                                ? $"Email to {toEmail} queued successfully!"
                                : $"Failure Email to {toEmail}");
