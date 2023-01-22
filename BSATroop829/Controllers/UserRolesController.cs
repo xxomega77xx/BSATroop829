@@ -49,6 +49,12 @@ namespace BSATroop829.Controllers
         {
             var user = await _userManager.FindByIdAsync(id);
             var roles = await _userManager.GetRolesAsync(user);
+            var adminRoles = model.UserRoles.Where(x => x.Selected).Select(x => x.RoleName == "Admin" || x.RoleName == "SuperAdmin");
+            if (!User.IsInRole("Admin") || !User.IsInRole("SuperAdmin") && adminRoles.Any())
+            {
+                ModelState.AddModelError("", "You cannot assign Admin roles to another user.");
+                return View("Index", model);
+            }
             var result = await _userManager.RemoveFromRolesAsync(user, roles);
             result = await _userManager.AddToRolesAsync(user, model.UserRoles.Where(x => x.Selected).Select(y => y.RoleName));
             var currentUser = await _userManager.GetUserAsync(User);
