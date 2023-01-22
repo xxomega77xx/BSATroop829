@@ -1,5 +1,6 @@
 ﻿using BSATroop829.Data;
 using BSATroop829.Models;
+using BSATroop829.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,12 @@ namespace BSATroop829.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        private readonly LogService _logService;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, LogService logService)
         {
             _logger = logger;
             _db = db;
+            _logService = logService;
         }
         [AllowAnonymous]
         public IActionResult Index()
@@ -23,7 +26,7 @@ namespace BSATroop829.Controllers
             return View();
         }
         #region BoyTroop
-        public IActionResult BoyTroop()
+        public async Task<IActionResult> BoyTroop()
         {
             return View();
         }

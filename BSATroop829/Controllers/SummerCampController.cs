@@ -1,5 +1,6 @@
 ﻿using BSATroop829.Data;
 using BSATroop829.Models;
+using BSATroop829.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,10 +11,12 @@ namespace BSATroop829.Controllers
     public class SummerCampController : Controller
     {
         private readonly ApplicationDbContext _db;
+        private readonly LogService _logService;
 
-        public SummerCampController(ApplicationDbContext db)
+        public SummerCampController(ApplicationDbContext db, LogService logService)
         {
             _db = db;
+            _logService = logService;
         }
 
         public async Task<IActionResult> Index(string sortOrder)
@@ -114,6 +117,7 @@ namespace BSATroop829.Controllers
                 _db.SummerCamp.Add(obj);
                 _db.SaveChanges();
                 TempData["success"] = "Scout information created successfully.";
+                _logService.Log(User.Identity.Name, "added a new scout to the summer camp roster for " + obj.ScoutName);
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -144,6 +148,7 @@ namespace BSATroop829.Controllers
                 _db.SummerCamp.Update(obj);
                 _db.SaveChanges();
                 TempData["success"] = "Scout information updated successfully.";
+                _logService.Log(User.Identity.Name, "updated a scout's information on the summer camp roster for " + obj.ScoutName);
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -176,6 +181,7 @@ namespace BSATroop829.Controllers
             _db.SummerCamp.Remove(obj);
             _db.SaveChanges();
             TempData["success"] = "Scout information removed successfully.";
+            _logService.Log(User.Identity.Name, "removed a scout from the summer camp roster for " + obj.ScoutName);
             return RedirectToAction("Index");
         }
 

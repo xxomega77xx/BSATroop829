@@ -17,6 +17,8 @@ builder.Services.AddControllersWithViews();
 //Add Email Sender
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+//Add Log Service
+builder.Services.AddTransient<LogService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
