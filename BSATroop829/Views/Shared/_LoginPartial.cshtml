@@ -25,5 +25,17 @@ else
     <li class="nav-item">
         <a class="nav-link" asp-area="" asp-controller="TroopEagles" asp-action="Index">Eagles</a>
     </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informationals</a>
+        <div class="dropdown-menu" style="background-color:green">
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ServiceHours">Service Hour Info</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" style="color:cyan" href="https://scoutbook.scouting.org">ScoutBook</a>
+            <a class="dropdown-item" style="color:cyan" href="https://my.scouting.org/">MyScouting</a>
+            <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/">Council</a>
+            <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/council/lincoln-trail/">District</a>
+        </div>
+    </li>
 }
 
