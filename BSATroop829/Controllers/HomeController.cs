@@ -36,6 +36,7 @@ namespace BSATroop829.Controllers
         }
         public IActionResult BoyTroopOrgChart()
         {
+            
             return View();
         }
         #endregion BoyTroop
@@ -55,21 +56,6 @@ namespace BSATroop829.Controllers
         }
 
         #endregion GirlTroop
-        
-        public IActionResult Edit()
-        {
-            return View();
-        }
-
-        public IActionResult Delete()
-        {
-            return View();
-        }
-        
-        public IActionResult Details()
-        {
-            return View();
-        }
         [AllowAnonymous]
         public IActionResult Credits()
         {
@@ -97,6 +83,11 @@ namespace BSATroop829.Controllers
         }
 
         public IActionResult EventDueDates()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult ServiceHours()
         {
             return View();
         }

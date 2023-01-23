@@ -52,7 +52,7 @@
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
                                 </div>
-                            </li>                            
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activity Registration</a>
                                 <div class="dropdown-menu" style="background-color:green">
@@ -80,8 +80,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="FileManager" asp-action="Index">Documents</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informationals</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ServiceHours">Service Hour Info</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" style="color:cyan" href="https://scoutbook.scouting.org">ScoutBook</a>
+                                    <a class="dropdown-item" style="color:cyan"  href="https://my.scouting.org/">MyScouting</a>
+                                    <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/">Council</a>
+                                    <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/council/lincoln-trail/">District</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
@@ -90,9 +99,9 @@
                             {
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle drop" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
-                                <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
-                                    <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
+                                    <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
                                     </div>
                                 </li>
                             }

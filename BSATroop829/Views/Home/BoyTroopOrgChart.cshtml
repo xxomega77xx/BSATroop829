@@ -14,12 +14,18 @@
     <div style="background-color:transparent"></div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Asst ScoutMaster
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         ScoutMaster
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         AsstScoutMaster
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
 </div>
 <div class="container float-end" style="background-color:lightgray">
@@ -27,69 +33,99 @@
         PLC
     </p>
     <div class="d-grid">
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Senior Patrol Leader
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Senior Patrol Leader
+<textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
     </div>
-</div>
-<div class="d-grid">
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div class="card text-bg-primary d-flex text-center align-items-center justify-content-center">
-        Asst Senior Patrol Leader
+    <div class="d-grid">
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div class="card text-bg-primary d-flex text-center align-items-center justify-content-center">
+            Asst Senior Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
     </div>
-</div>
-<div class="d-grid">
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Patrol Leader
+    <div class="d-grid">
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
     </div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Patrol Leader
+    <div class="d-grid">
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Asst Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Asst Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
+        <div class="card text-bg-primary text-center align-items-center justify-content-center">
+            Asst Patrol Leader
+            <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
+        </div>
     </div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Patrol Leader
-    </div>
-</div>
-<div class="d-grid">
-    <div style="background-color:transparent"></div>
-    <div style="background-color:transparent"></div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Asst Patrol Leader
-    </div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Asst Patrol Leader
-    </div>
-    <div class="card text-bg-primary text-center align-items-center justify-content-center">
-        Asst Patrol Leader
-    </div>
-</div>
 </div>
 
 <div class="d-grid">
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Troop Historian
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Librarian
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Scribe
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Instructor
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         QuarterMaster
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Bugler
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
     <div class="card text-bg-primary text-center align-items-center justify-content-center">
         Chaplain Aide
+        <textarea @(User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster")? "contenteditable" : "readonly")>
+</textarea>
     </div>
 </div>
