@@ -26,6 +26,12 @@ namespace BSATroop829.Controllers
                           View(await _context.GirlTroopOrgChart.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.GirlTroopOrgChart'  is null.");
         }
+        public async Task<IActionResult> GirlTroopOrgChart()
+        {
+            return _context.GirlTroopOrgChart != null ?
+                        View(await _context.GirlTroopOrgChart.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.GirlTroopOrgChart'  is null.");
+        }
 
         // GET: GirlTroopOrgChartViewModels/Details/5
         public async Task<IActionResult> Details(int? id)
