@@ -1,0 +1,151 @@
+﻿@model IEnumerable<BSATroop829.Models.GirlTroopOrgChartViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Manage Girl Troop Org Chart</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoutMaster)
+            </th>
+            <br />
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantScoutMaster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantScoutMaster2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantScoutMaster3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeniorPatrolLeader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantSeniorPatrolLeader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatrolLeader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatrolLeader2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatrolLeader3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantPatrolLeader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantPatrolLeader2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantPatrolLeader3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quartermaster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instructor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bugler)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quartermaster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChaplainAide)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Librarian)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Historian)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scribe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScoutMaster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantScoutMaster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantScoutMaster2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantScoutMaster3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeniorPatrolLeader)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantSeniorPatrolLeader)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatrolLeader)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatrolLeader2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatrolLeader3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quartermaster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instructor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bugler)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quartermaster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaplainAide)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Librarian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Historian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scribe)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

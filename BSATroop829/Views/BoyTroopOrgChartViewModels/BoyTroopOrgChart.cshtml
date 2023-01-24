@@ -1,0 +1,137 @@
+﻿@model IEnumerable<BSATroop829.Models.BoyTroopOrgChartViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="d-grid">
+        <style>
+            .d-grid {
+                display: grid;
+                grid: 100px / auto auto auto auto auto auto auto;
+                grid-gap: 10px;
+                padding: 10px;
+            }
+
+            .body {
+            }
+        </style>
+        <div style="background-color:transparent"></div>
+        <div style="background-color:transparent"></div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Asst.ScoutMaster</u>
+            @Html.DisplayFor(modelItem => item.AssistantScoutMaster2)
+            @Html.DisplayFor(modelItem => item.AssistantScoutMaster3)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>ScoutMaster</u>
+
+            @Html.DisplayFor(modelItem => item.ScoutMaster)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Asst.ScoutMaster</u>
+            @Html.DisplayFor(modelItem => item.AssistantScoutMaster)
+        </div>
+    </div>
+    <div class="container float-end" style="background-color:lightgray">
+        <p class="float" style="font-size:large">
+            PLC
+        </p>
+        <div class="d-grid">
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Senior Patrol Leader</u>
+                @Html.DisplayFor(modelItem => item.SeniorPatrolLeader)
+            </div>
+        </div>
+        <div class="d-grid">
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div class="card text-white bg-success mb-3 d-flex text-center align-items-center justify-content-center">
+                <u>Asst.Senior Patrol Leader</u>
+                @Html.DisplayFor(modelItem => item.AssistantSeniorPatrolLeader)
+            </div>
+        </div>
+        <div class="d-grid">
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.PatrolLeader)
+            </div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.PatrolLeader2)
+            </div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.PatrolLeader3)
+            </div>
+        </div>
+        <div class="d-grid">
+            <div style="background-color:transparent"></div>
+            <div style="background-color:transparent"></div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Asst.Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader)
+            </div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Asst.Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader2)
+            </div>
+            <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+                <u>Asst.Patrol Leader</u>
+
+                @Html.DisplayFor(modelItem => item.AssistantPatrolLeader3)
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid">
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Troop Historian</u>
+
+            @Html.DisplayFor(modelItem => item.Historian)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Librarian</u>
+
+            @Html.DisplayFor(modelItem => item.Librarian)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Scribe</u>
+
+            @Html.DisplayFor(modelItem => item.Scribe)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Instructor</u>
+
+            @Html.DisplayFor(modelItem => item.Instructor)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Quartermaster</u>
+
+            @Html.DisplayFor(modelItem => item.Quartermaster)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Bugler</u>
+
+            @Html.DisplayFor(modelItem => item.Bugler)
+        </div>
+        <div class="card text-white bg-success mb-3 text-center align-items-center justify-content-center">
+            <u>Chaplain Aide</u>
+
+            @Html.DisplayFor(modelItem => item.ChaplainAide)
+        </div>
+    </div>
+}

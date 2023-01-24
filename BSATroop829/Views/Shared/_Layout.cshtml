@@ -36,7 +36,7 @@
                                 <div class="dropdown-menu" style="background-color:green">
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopCal">Calendar</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="BoyTroopOrgChartViewModels" asp-action="BoyTroopOrgChart">Organizational Chart</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
@@ -47,7 +47,7 @@
                                 <div class="dropdown-menu" style="background-color:green">
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopCal">Calendar</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="GirlTroopOrgChartViewModels" asp-action="GirlTroopOrgChart">Organizational Chart</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
@@ -102,6 +102,8 @@
                                     <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
                                         <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
                                         <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="BoyTroopOrgChartViewModels" asp-action="Index">Manage BT Org Chart</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="GirlTroopOrgChartViewModels" asp-action="Index">Manage GT Org Chart</a>
                                     </div>
                                 </li>
                             }

@@ -4,6 +4,7 @@ using BSATroop829.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BSATroop829.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230123203848_AddScoutOrgChart")]
+    partial class AddScoutOrgChart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +66,7 @@ namespace BSATroop829.Data.Migrations
                     b.Property<string>("Historian")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Instructor")
+                    b.Property<string>("Intructor")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Librarian")
@@ -77,9 +80,6 @@ namespace BSATroop829.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PatrolLeader3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Quartermaster")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Quartermaster")
@@ -166,7 +166,7 @@ namespace BSATroop829.Data.Migrations
                     b.Property<string>("Historian")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Instructor")
+                    b.Property<string>("Intructor")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Librarian")
@@ -180,9 +180,6 @@ namespace BSATroop829.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PatrolLeader3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Quartermaster")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Quartermaster")
