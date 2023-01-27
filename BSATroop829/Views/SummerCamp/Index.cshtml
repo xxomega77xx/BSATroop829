@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<SummerCampViewModel>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,118 +14,115 @@
         </div>
         <div class="col-7 text-end">
             <a asp-action="Create" class="btn btn-secondary float-right">
-                <i class="bi bi-person-fill-add"></i> 
+                <i class="bi bi-person-fill-add"></i>
                 &nbsp; Add Scout
-                </a>
+            </a>
         </div>
     </div>
     <br /><br />
-    <table class="table table-bordered table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ScoutName)</a>
-                </th>
-                <th>
-                    Age
-                </th>
-                <th>
-                    Rank
-                </th>
-                <th>
-                    Merit Badge Priority 1
-                </th>
-                <th>
-                    Merit Badge Priority 2
-                </th>
-                <th>
-                    Merit Badge Priority 3
-                </th>
-                <th>
-                    Merit Badge Priority 4
-                </th>
-                <th>
-                    Merit Badge Priority 5
-                </th>
-                <th>
-                    Merit Badge Priority 6
-                </th>
-                <th>
-                    Merit Badge Priority 7
-                </th>
-                <th>
-                    Merit Badge Priority 8
-                </th>
-                <th>
-                    Merit Badge Priority 9
-                </th>
-                <th>
-                    Merit Badge Priority 10
-                </th>
-                <th>
-                    Merit Badge Priority 11
-                </th>
-                <th>
-                    Merit Badge Priority 12
-                </th>
-                @if (User.IsInRole("Admin") || User.IsInRole("Activities Coordinator") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
-                {
+    @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin") || User.IsInRole("Committee Member") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ScoutName)</a>
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Rank
+                    </th>
+                    <th>
+                        Merit Badge Priority 1
+                    </th>
+                    <th>
+                        Merit Badge Priority 2
+                    </th>
+                    <th>
+                        Merit Badge Priority 3
+                    </th>
+                    <th>
+                        Merit Badge Priority 4
+                    </th>
+                    <th>
+                        Merit Badge Priority 5
+                    </th>
+                    <th>
+                        Merit Badge Priority 6
+                    </th>
+                    <th>
+                        Merit Badge Priority 7
+                    </th>
+                    <th>
+                        Merit Badge Priority 8
+                    </th>
+                    <th>
+                        Merit Badge Priority 9
+                    </th>
+                    <th>
+                        Merit Badge Priority 10
+                    </th>
+                    <th>
+                        Merit Badge Priority 11
+                    </th>
+                    <th>
+                        Merit Badge Priority 12
+                    </th>
                     <th>
                     </th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @item.ScoutName
-                    </td>
-                    <td>
-                        @item.Age
-                    </td>
-                    <td>
-                        @item.Rank
-                    </td>
-                    <td>
-                        @item.Priority1
-                    </td>
-                    <td>
-                        @item.Priority2
-                    </td>
-                    <td>
-                        @item.Priority3
-                    </td>
-                    <td>
-                        @item.Priority4
-                    </td>
-                    <td>
-                        @item.Priority5
-                    </td>
-                    <td>
-                        @item.Priority6
-                    </td>
-                    <td>
-                        @item.Priority7
-                    </td>
-                    <td>
-                        @item.Priority8
-                    </td>
-                    <td>
-                        @item.Priority9
-                    </td>
-                    <td>
-                        @item.Priority10
-                    </td>
-                    <td>
-                        @item.Priority11
-                    </td>
-                    <td>
-                        @item.Priority12
-                    </td>
-                    @if (User.IsInRole("Admin") || User.IsInRole("Activities Coordinator") || User.IsInRole("ScoutMaster") || User.IsInRole("AsstScoutMaster"))
-                    {
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.ScoutName
+                        </td>
+                        <td>
+                            @item.Age
+                        </td>
+                        <td>
+                            @item.Rank
+                        </td>
+                        <td>
+                            @item.Priority1
+                        </td>
+                        <td>
+                            @item.Priority2
+                        </td>
+                        <td>
+                            @item.Priority3
+                        </td>
+                        <td>
+                            @item.Priority4
+                        </td>
+                        <td>
+                            @item.Priority5
+                        </td>
+                        <td>
+                            @item.Priority6
+                        </td>
+                        <td>
+                            @item.Priority7
+                        </td>
+                        <td>
+                            @item.Priority8
+                        </td>
+                        <td>
+                            @item.Priority9
+                        </td>
+                        <td>
+                            @item.Priority10
+                        </td>
+                        <td>
+                            @item.Priority11
+                        </td>
+                        <td>
+                            @item.Priority12
+                        </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">
                                 <i class="bi bi-pencil"></i>
@@ -133,9 +131,10 @@
                                 <i class="bi bi-trash"></i>
                             </a>
                         </td>
-                    }
-                </tr>
-            }
+                    </tr>
+                }
 
-    </table>
+        </table>
+    }
+
 </div>

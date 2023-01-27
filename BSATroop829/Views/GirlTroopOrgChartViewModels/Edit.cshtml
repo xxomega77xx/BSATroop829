@@ -1,0 +1,122 @@
+﻿@model BSATroop829.Models.GirlTroopOrgChartViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>GirlTroopOrgChartViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ScoutMaster" class="control-label"></label>
+                <input asp-for="ScoutMaster" class="form-control" />
+                <span asp-validation-for="ScoutMaster" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantScoutMaster" class="control-label"></label>
+                <input asp-for="AssistantScoutMaster" class="form-control" />
+                <span asp-validation-for="AssistantScoutMaster" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantScoutMaster2" class="control-label"></label>
+                <input asp-for="AssistantScoutMaster2" class="form-control" />
+                <span asp-validation-for="AssistantScoutMaster2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantScoutMaster3" class="control-label"></label>
+                <input asp-for="AssistantScoutMaster3" class="form-control" />
+                <span asp-validation-for="AssistantScoutMaster3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeniorPatrolLeader" class="control-label"></label>
+                <input asp-for="SeniorPatrolLeader" class="form-control" />
+                <span asp-validation-for="SeniorPatrolLeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantSeniorPatrolLeader" class="control-label"></label>
+                <input asp-for="AssistantSeniorPatrolLeader" class="form-control" />
+                <span asp-validation-for="AssistantSeniorPatrolLeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatrolLeader" class="control-label"></label>
+                <input asp-for="PatrolLeader" class="form-control" />
+                <span asp-validation-for="PatrolLeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatrolLeader2" class="control-label"></label>
+                <input asp-for="PatrolLeader2" class="form-control" />
+                <span asp-validation-for="PatrolLeader2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatrolLeader3" class="control-label"></label>
+                <input asp-for="PatrolLeader3" class="form-control" />
+                <span asp-validation-for="PatrolLeader3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantPatrolLeader" class="control-label"></label>
+                <input asp-for="AssistantPatrolLeader" class="form-control" />
+                <span asp-validation-for="AssistantPatrolLeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantPatrolLeader2" class="control-label"></label>
+                <input asp-for="AssistantPatrolLeader2" class="form-control" />
+                <span asp-validation-for="AssistantPatrolLeader2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantPatrolLeader3" class="control-label"></label>
+                <input asp-for="AssistantPatrolLeader3" class="form-control" />
+                <span asp-validation-for="AssistantPatrolLeader3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quartermaster" class="control-label"></label>
+                <input asp-for="Quartermaster" class="form-control" />
+                <span asp-validation-for="Quartermaster" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instructor" class="control-label"></label>
+                <input asp-for="Instructor" class="form-control" />
+                <span asp-validation-for="Instructor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bugler" class="control-label"></label>
+                <input asp-for="Bugler" class="form-control" />
+                <span asp-validation-for="Bugler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChaplainAide" class="control-label"></label>
+                <input asp-for="ChaplainAide" class="form-control" />
+                <span asp-validation-for="ChaplainAide" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Librarian" class="control-label"></label>
+                <input asp-for="Librarian" class="form-control" />
+                <span asp-validation-for="Librarian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Historian" class="control-label"></label>
+                <input asp-for="Historian" class="form-control" />
+                <span asp-validation-for="Historian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Scribe" class="control-label"></label>
+                <input asp-for="Scribe" class="form-control" />
+                <span asp-validation-for="Scribe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

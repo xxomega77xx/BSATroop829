@@ -1,22 +1,24 @@
 ﻿using BSATroop829.Data;
 using BSATroop829.Models;
+using BSATroop829.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        private readonly LogService _logService;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, LogService logService)
         {
             _logger = logger;
             _db = db;
+            _logService = logService;
         }
         [AllowAnonymous]
         public IActionResult Index()
@@ -24,7 +26,7 @@ namespace BSATroop829.Controllers
             return View();
         }
         #region BoyTroop
-        public IActionResult BoyTroop()
+        public async Task<IActionResult> BoyTroop()
         {
             return View();
         }
@@ -34,6 +36,7 @@ namespace BSATroop829.Controllers
         }
         public IActionResult BoyTroopOrgChart()
         {
+            
             return View();
         }
         #endregion BoyTroop
@@ -53,35 +56,42 @@ namespace BSATroop829.Controllers
         }
 
         #endregion GirlTroop
-        
-        public async Task<IActionResult> EaglesAsync(string sortOrder)
+        [AllowAnonymous]
+        public IActionResult Credits()
         {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ScoutName" : "";
-            var Scouts = from s in _db.TroopEagles
-                         select s;
-            switch (sortOrder)
-            {
-                case "ScoutName":
-                    Scouts = Scouts.OrderByDescending(s => s.ScoutName);
-                    break;
-            }
-            return View(await Scouts.ToListAsync());
+            return View();
         }
-        
-        public IActionResult Edit()
+        [AllowAnonymous]
+        public IActionResult FAQ()
         {
             return View();
         }
 
-        public IActionResult Delete()
+        public IActionResult FinancialAidForm()
         {
             return View();
         }
         
-        public IActionResult Details()
+        public IActionResult ReimbursementForm()
         {
             return View();
         }
+
+        public IActionResult MeritBadgeCollegeRegistrationForm()
+        {
+            return View();
+        }
+
+        public IActionResult EventDueDates()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult ServiceHours()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -80,6 +80,29 @@
     --bs-highlight-bg: #fff3cd
 }
 
+
+/*Custom added CSS*/
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.container-Iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 100%;  16:9 Aspect Ratio (divide 9 by 16 = 0.5625);
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
 *, ::after, ::before {
     box-sizing: border-box
 }
@@ -115,7 +138,9 @@ hr {
     margin-top: 0;
     margin-bottom: 1rem;
     font-weight: 700;
-    line-height: 1.2
+    line-height: 1.2;
+    color:black
+    
 }
 
 .h1, h1 {
@@ -305,7 +330,9 @@ img, svg {
 
 table {
     caption-side: bottom;
-    border-collapse: collapse
+    border-collapse: collapse;
+    width: 50%
+    
 }
 
 caption {
@@ -2143,7 +2170,7 @@ progress {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #fff;
+    color: black;
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid rgba(255,255,255,.4);
@@ -2169,7 +2196,7 @@ progress {
     }
 
 .form-control:focus {
-    color: #fff;
+    color: forestgreen;
     background-color: transparent;
     border-color: rgba(255,255,255,.4);
     outline: 0;
@@ -3092,8 +3119,8 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #e83283;
-    --bs-btn-border-color: #e83283;
+    --bs-btn-bg: green;
+    --bs-btn-border-color: tan;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c52b6f;
     --bs-btn-hover-border-color: #ba2869;
@@ -3160,7 +3187,7 @@ textarea.form-control-lg {
 
 .btn-warning {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #ffc107;
+    --bs-btn-bg: Orange;
     --bs-btn-border-color: #ffc107;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #d9a406;
@@ -3177,7 +3204,7 @@ textarea.form-control-lg {
 
 .btn-danger {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #fd7e14;
+    --bs-btn-bg: Red;
     --bs-btn-border-color: #fd7e14;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #d76b11;
@@ -12214,7 +12241,7 @@ textarea.form-control-lg {
 }
 
 body {
-    background-image: linear-gradient(90deg,green,green,#194D33)
+    background-image: linear-gradient(90deg,tan,tan,#194D33)
 }
 
 .table-secondary {
@@ -12222,7 +12249,7 @@ body {
 }
 
 .btn-secondary {
-    color: #fff;
+    color: black;
     border: none
 }
 

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var posts = Model;
+    <script type="text/javascript">
+        function timedRefresh(timeoutPeriod) {
+            setTimeout(function () {
+                location.reload(true);
+            }, timeoutPeriod);
+        }
+    </script>
+}
+
+@foreach (var post in posts)
+{
+    <div onload="JavaScript:timedRefresh(5000);" class="card text-white bg-dark mb-3">
+        <div class="card-header">@post.author.name</div>
+        <div class="card-body">
+            <p class="card-text">@post.content</p>
+        </div>
+        <div class="card-footer">
+            @if (post.latest_comments != null)
+            {
+                <h7 style="color:white">Comments</h7>
+                @foreach (var comment in post.latest_comments)
+                {
+                    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                        <div class="card-header">@comment.author.name</div>
+                        <div class="card-body">
+                            <p class="card-text">@comment.body</p>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+}

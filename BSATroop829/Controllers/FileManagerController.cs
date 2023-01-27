@@ -1,5 +1,6 @@
 ﻿using BSATroop829.Data;
 using BSATroop829.Models;
+using BSATroop829.Services;
 using EllipticCurve.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -10,14 +11,16 @@ using System.IO;
 
 namespace BSATroop829.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class FileManagerController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly LogService _logService;
 
-        public FileManagerController(ApplicationDbContext context)
+        public FileManagerController(ApplicationDbContext context, LogService logService)
         {
             _context = context;
+            _logService = logService;
         }
 
         // GET: FileManager
@@ -51,6 +54,7 @@ namespace BSATroop829.Controllers
                         currentFile.Path = filePath;
                         _context.FileManager.Add(currentFile);
                         _context.SaveChanges();
+                        _logService.Log(User.Identity.Name, "Added file " + currentFile.Name);
                     }
                 }
                 return RedirectToAction("Index");
@@ -69,6 +73,7 @@ namespace BSATroop829.Controllers
                 System.IO.File.Delete(file.Path);
                 _context.FileManager.Remove(file);
                 _context.SaveChanges();
+                _logService.Log(User.Identity.Name, "removed file " + file.Name);
             }
             return RedirectToAction("index");
         }
@@ -81,6 +86,7 @@ namespace BSATroop829.Controllers
                 byte[] bytes = System.IO.File.ReadAllBytes(file.Path);
                 return File(bytes, "application/octet-stream", file.Name.Split('_')[1]);
             }
+            _logService.Log(User.Identity.Name, "downloaded file " + file.Name);
             return RedirectToAction("index");
         }
 

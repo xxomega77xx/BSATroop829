@@ -37,6 +37,7 @@ public class EmailSender : IEmailSender
             Subject = subject,
             PlainTextContent = message,
             HtmlContent = message
+            
         };
         msg.AddTo(new EmailAddress(toEmail));
 

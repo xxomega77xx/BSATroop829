@@ -1,92 +1,99 @@
-﻿@model SummerCampViewModel
+﻿@model BSATroop829.Models.SummerCampViewModel
 
-<form method="post">
-    <div class="border p-3 mt-4">
-        <div class="row pb-2">
-            <h2>Input Scout Info</h2>
-            <hr />
-        </div>
-        <div class="mb-3">
-            <label asp-for="ScoutName" class="form-label">Scout Name</label>
-            <input asp-for="ScoutName" type="text" class="form-control" />
-            <span asp-validation-for="ScoutName" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Age" class="form-label">Age</label>
-            <input asp-for="Age" type="text" class="form-control" />
-            <span asp-validation-for="Age" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Rank" class="form-label">Rank</label>
-            <input asp-for="Rank" type="text" class="form-control" />
-            <span asp-validation-for="Rank" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority1" class="form-label">Merit Badge 1st Choice</label>
-            <input asp-for="Priority1" type="text" class="form-control" />
-            <span asp-validation-for="Priority1" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority2" class="form-label">Merit Badge 2nd Choice</label>
-            <input asp-for="Priority2" type="text" class="form-control" />
-            <span asp-validation-for="Priority2" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority3" class="form-label">Merit Badge 3rd Choice</label>
-            <input asp-for="Priority3" type="text" class="form-control" />
-            <span asp-validation-for="Priority3" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority4" class="form-label">Merit Badge 4th Choice</label>
-            <input asp-for="Priority4" type="text" class="form-control" />
-            <span asp-validation-for="Priority4" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority5" class="form-label">Merit Badge 5th Choice</label>
-            <input asp-for="Priority5" type="text" class="form-control" />
-            <span asp-validation-for="Priority5" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority6" class="form-label">Merit Badge 6th Choice</label>
-            <input asp-for="Priority6" type="text" class="form-control" />
-            <span asp-validation-for="Priority6" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority7" class="form-label">Merit Badge 7th Choice</label>
-            <input asp-for="Priority7" type="text" class="form-control" />
-            <span asp-validation-for="Priority7" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority8" class="form-label">Merit Badge 8th Choice</label>
-            <input asp-for="Priority8" type="text" class="form-control" />
-            <span asp-validation-for="Priority8" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority9" class="form-label">Merit Badge 9th Choice</label>
-            <input asp-for="Priority9" type="text" class="form-control" />
-            <span asp-validation-for="Priority9" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority10" class="form-label">Merit Badge 10th Choice</label>
-            <input asp-for="Priority10" type="text" class="form-control" />
-            <span asp-validation-for="Priority10" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority11" class="form-label">Merit Badge 11th Choice</label>
-            <input asp-for="Priority11" type="text" class="form-control" />
-            <span asp-validation-for="Priority11" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Priority12" class="form-label">Merit Badge 12th Choice</label>
-            <input asp-for="Priority12" type="text" class="form-control" />
-            <span asp-validation-for="Priority12" class="text-danger"></span>
-        </div>
-        
-             
-        
-         <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
-         <a asp-controller="SummerCamp" asp-action="Index" class="btn btn-secondary" style="width:150px">
-             Back to list
-         </a>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ScoutName" class="control-label"></label>
+                <input asp-for="ScoutName" class="form-control" />
+                <span asp-validation-for="ScoutName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rank" class="control-label"></label>
+                <input asp-for="Rank" class="form-control" />
+                <span asp-validation-for="Rank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority1" class="control-label"></label>
+                <select asp-for="Priority1" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority2" class="control-label"></label>
+                <select asp-for="Priority2" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority3" class="control-label"></label>
+                <select asp-for="Priority3" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority4" class="control-label"></label>
+                <select asp-for="Priority4" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority5" class="control-label"></label>
+                <select asp-for="Priority5" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority6" class="control-label"></label>
+                <select asp-for="Priority6" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority7" class="control-label"></label>
+                <select asp-for="Priority7" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority8" class="control-label"></label>
+                <select asp-for="Priority8" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority9" class="control-label"></label>
+                <select asp-for="Priority9" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority10" class="control-label"></label>
+                <select asp-for="Priority10" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority10" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority11" class="control-label"></label>
+                <select asp-for="Priority11" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority11" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority12" class="control-label"></label>
+                <select asp-for="Priority12" class="form-control" asp-items="ViewBag.DropdownItems"></select>
+                <span asp-validation-for="Priority12" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
-</form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

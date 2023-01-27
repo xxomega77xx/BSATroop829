@@ -29,14 +29,15 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @if (SignInManager.IsSignedIn(User))
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle drop" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boy Troop</a>
                                 <div class="dropdown-menu" style="background-color:green">
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopCal">Calendar</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="BoyTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="BoyTroopOrgChartViewModels" asp-action="BoyTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
                                 </div>
@@ -46,19 +47,32 @@
                                 <div class="dropdown-menu" style="background-color:green">
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroop">Home</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopCal">Calendar</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="GirlTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="GirlTroopOrgChartViewModels" asp-action="GirlTroopOrgChart">Organizational Chart</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="EventDueDates">Event Due Dates</a>
+                                    @*<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>*@
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activity Registration</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="SummerCamp" asp-action="Index">Summer Camp 2023</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="MeritBadgeCollegeRegistrationForm">Merit Badge College 2023</a>
+                                    @*<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>*@
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Requests</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FinancialAidForm">Financial Aid Request</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ReimbursementForm">Reimbursement Request</a>
                                     @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>*@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="SummerCamp" asp-action="Index">Summer Camp 2023</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Eagles">Eagles</a>
+                                <a class="nav-link" asp-area="" asp-controller="TroopEagles" asp-action="Index">Eagles</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="MeritBadgeCounselors" asp-action="Index">Local Merit Badge Counselors</a>
@@ -66,13 +80,35 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="FileManager" asp-action="Index">Documents</a>
                             </li>
-                            @if (User.IsInRole("Admin"))
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="BandFeed" asp-action="Index">Band</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informationals</a>
+                                <div class="dropdown-menu" style="background-color:green">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ServiceHours">Service Hour Info</a>
+                                    <a class="dropdown-item" style="color:orchid" href="https://my.scouting.org/VES/OnlineReg/1.0.0/?tu=UF-MB-205tab0829">GT REGISTRATION!</a>
+                                    <a class="dropdown-item" style="color:aquamarine" href="https://my.scouting.org/VES/OnlineReg/1.0.0/?tu=UF-MB-205taa0829">BT REGISTRATION!</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" style="color:cyan" href="https://scoutbook.scouting.org">ScoutBook</a>
+                                    <a class="dropdown-item" style="color:cyan"  href="https://my.scouting.org/">MyScouting</a>
+                                    <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/">Council</a>
+                                    <a class="dropdown-item" style="color:cyan" href="https://lhcbsa.org/council/lincoln-trail/">District</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Index">Photo Gallery</a>
+                            </li>
+                            @if (User.IsInRole("Admin") || User.IsInRole("ScoutMaster") || User.IsInRole("Committee Member"))
                             {
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle drop" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
-                                <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
-                                    <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
-                                    <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
+                                    <div class="dropdown-menu dropdown-menu-dark" style="background-color:green">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Manage Roles</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="BoyTroopOrgChartViewModels" asp-action="Index">Manage BT Org Chart</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="GirlTroopOrgChartViewModels" asp-action="Index">Manage GT Org Chart</a>
                                     </div>
                                 </li>
                             }
@@ -102,7 +138,7 @@
 
     <footer class="footer text-muted bg-dark">
         <div class="container">
-            &copy; 2022 - BSATroop829 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - BSATroop829 - <a asp-area="" asp-controller="Home" asp-action="Credits">Credits</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

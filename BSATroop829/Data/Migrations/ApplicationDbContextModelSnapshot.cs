@@ -17,10 +17,88 @@ namespace BSATroop829.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("BSATroop829.Models.BoyTroopOrgChartViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AssistantPatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantPatrolLeader2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantPatrolLeader3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantSeniorPatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bugler")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChaplainAide")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Historian")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instructor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Librarian")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Quartermaster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Quartermaster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ScoutMaster")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Scribe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeniorPatrolLeader")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BoyTroopOrgChart");
+                });
 
             modelBuilder.Entity("BSATroop829.Models.FileManagerViewModel", b =>
                 {
@@ -47,6 +125,109 @@ namespace BSATroop829.Data.Migrations
                     b.ToTable("FileManager");
                 });
 
+            modelBuilder.Entity("BSATroop829.Models.GirlTroopOrgChartViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AssistantPatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantPatrolLeader2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantPatrolLeader3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantScoutMaster3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssistantSeniorPatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bugler")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChaplainAide")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Historian")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instructor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Librarian")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatrolLeader3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Quartermaster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Quartermaster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ScoutMaster")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Scribe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeniorPatrolLeader")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GirlTroopOrgChart");
+                });
+
+            modelBuilder.Entity("BSATroop829.Models.LoggingViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("TimeStamp")
+                        .IsRequired()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LogEnties");
+                });
+
             modelBuilder.Entity("BSATroop829.Models.MeritBadgeCounselorsViewModel", b =>
                 {
                     b.Property<int>("Id")
@@ -68,6 +249,34 @@ namespace BSATroop829.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MeritBadgeCounselors");
+                });
+
+            modelBuilder.Entity("BSATroop829.Models.MeritBadgesViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Eagle_Required")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Requirements")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MeritBadges");
                 });
 
             modelBuilder.Entity("BSATroop829.Models.PhotoGalleryVeiwModel", b =>

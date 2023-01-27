@@ -14,13 +14,13 @@
             </div>
         </div>
         <div class="card-body">
-            @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Commitee Member"))
+            @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Committee Member"))
             {
                 <form id="frmDocumentLibrary" class="form-control" asp-action="AddFiles" asp-controller="FileManager" method="post" enctype="multipart/form-data">
                     <div class="col-md-6 col-sm-6">
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Photo</label>
+                            <label class="col-sm-2 col-form-label">File</label>
 
                             <div class="col-sm-6 custom-file">
 
@@ -28,7 +28,7 @@
                                 <span asp-validation-for="@Model.Files.File" class="text-danger"></span>
 
                             </div>
-                            <div class="col-sm-4"> <button type="submit" class="btn btn-danger">Upload All</button></div>
+                            <div class="col-sm-4"> <button type="submit" class="btn btn-primary">Upload All</button></div>
                         </div>
 
 
@@ -46,8 +46,8 @@
                         <div class="card card-img" style="height:25%">
                             <div class="card-img">
                                 <h2>@item.Name.Split('_')[1].ToUpper()</h2>
-                                @Html.ActionLink("Download", "DownloadFile", new { id = item.Id }, new {@class = "btn btn-danger", @style = "float:right"})
-                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Commitee Member"))
+                                @Html.ActionLink("Download", "DownloadFile", new { id = item.Id }, new {@class = "btn btn-primary", @style = "float:right"})
+                                @if (User.IsInRole("ScoutMaster") || User.IsInRole("Admin") || User.IsInRole("AsstScoutMaster") || User.IsInRole("Committee Member"))
                                 {
                                     <a href="@Url.Action("DeleteFile","FileManager",new { id=item.Id})" class="btn btn-secondary" style="float:right">Delete</a>
                                 }
