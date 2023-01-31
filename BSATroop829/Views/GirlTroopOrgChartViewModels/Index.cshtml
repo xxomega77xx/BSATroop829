@@ -7,13 +7,14 @@
 
 <h1>Manage Girl Troop Org Chart</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 
-<table class="table">
+<table class="table" style="block-size:contain">
     <thead>
         <tr>
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.ScoutMaster)
             </th>
@@ -73,14 +74,27 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scribe)
-            </th>
-            <th></th>
+            </th>            
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">
+                        <i class="bi bi-pencil"></i>
+                        Edit
+                        </a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">
+                        <i class="bi bi-card-list"></i>
+                        Details
+                        </a> @*|
+                    <a asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="bi bi-trash"></i>
+                        Delete
+                        </a>*@
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ScoutMaster)
                 </td>
@@ -141,11 +155,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Scribe)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                
             </tr>
         }
     </tbody>
